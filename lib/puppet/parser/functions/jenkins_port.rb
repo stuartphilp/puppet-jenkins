@@ -11,9 +11,9 @@ module Puppet::Parser::Functions
 
     config_hash = lookupvar('::jenkins::config_hash')
     if config_hash && \
-      config_hash['HTTP_PORT'] && \
-      config_hash['HTTP_PORT']['value']
-      return config_hash['HTTP_PORT']['value']
+      config_hash['HTTPS_PORT'] && \
+      config_hash['HTTPS_PORT']['value']
+      return config_hash['HTTPS_PORT']['value']
     else
       return lookupvar('::jenkins::params::port')
     end
