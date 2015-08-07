@@ -31,6 +31,7 @@ class jenkins::cli_helper (
       '/usr/bin/java',
       "-jar ${::jenkins::cli::jar}",
       "-s https://127.0.0.1:${port}",
+      "-noCertificateCheck",
       $auth_arg,
       "groovy ${helper_groovy}",
     ]),
